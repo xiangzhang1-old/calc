@@ -10,7 +10,7 @@ Welcome to calc's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-``calc`` implements and automates quantum-chemical calculations.
+``calc`` implements and automates quantum-chemical calculations. It is primarily defined :download:`here <cgz1.procreate>`.
 
 Indices and tables
 ==================
