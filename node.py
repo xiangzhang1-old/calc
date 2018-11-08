@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
-from __future__ import print_function, division, str_literals
+from __future__ import print_function, division, unicode_literals
 import weakref
 import numpy as np
 
@@ -42,8 +42,10 @@ class Node:
         self.name = name.replace('/', '|')
         """str: Node's name."""
         self.prev = weakref.proxy(prev) if prev is not None else None
-        """:class:`weakref.ProxyType` to prev Node, or None. Similar to a double linked  list, the \
-        pointer needs to be updated when the node is moved"""
+        """
+        :py:class:`weakref.ProxyType` to prev Node, or None. Similar to a double\
+        linked list, the pointer needs to be updated when the node is moved
+        """
         self.parent = weakref.proxy(parent) if parent is not None else None
         """:class:`weakref.ProxyType` to parent Node, or None for root node."""
         self.x = x if x is not None else np.random.uniform(low=-200, high=200)
@@ -63,7 +65,7 @@ class Node:
         Caveat: While a Unix filesystem look-and-feel is achieved, the root \
         node's id is qualitatively different, which may cause problems.
 
-        :return: UID of the node, e.g. "/PbS QD/bare qd/o(e) performance"
+        :return: UID of the node, e.g. ``/PbS QD/bare qd/o(e) performance``
         :rtype: str
         """
         if parent is None:
