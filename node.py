@@ -22,8 +22,6 @@ def id(id):
     # where is master
     n = node.the('master')
 
-# FIND? 倒桩
-# name不能加点验证。点太脑残了。
 # 如果是folder的话太脑残了吧？加点料，双指针？
 
 
