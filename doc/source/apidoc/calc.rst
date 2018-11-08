@@ -12,10 +12,10 @@ calc.node module
     :undoc-members:
     :show-inheritance:
 
-calc.utils module
------------------
+calc.util module
+----------------
 
-.. automodule:: calc.utils
+.. automodule:: calc.util
     :members:
     :undoc-members:
     :show-inheritance:

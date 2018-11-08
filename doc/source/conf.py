@@ -40,6 +40,7 @@ release = u''
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.intersphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -174,4 +175,6 @@ epub_title = project
 epub_exclude_files = ['search.html']
 
 
+# -- Hi. User-added content here : ) -----------------------------------------
+autoclass_content = 'both'
 # -- Extension configuration -------------------------------------------------
