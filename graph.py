@@ -22,32 +22,21 @@ def id(id):
     # where is master
     n = node.the('master')
 
-# 如果是folder的话太脑残了吧？加点料，双指针？
-
 
 class Node:
 
-    def __init__(self, name, prev, parent, x=None, y=None):
+    def __init__(self, name, x=None, y=None):
         """
         Implements a generic "node" in a nested directed graph.
 
         :param str name: Node's name. '/' will be silently replaced with '|', \
         to facilitate id.
-        :param Node prev: Previous node, can be None.
-        :param Node parent: Parent node, is None for root node
         :param float x: x coordinate. None to use random number
-        :param float y: y coordinate. None to use random number
+        :param float y: y coordinate
 
         """
         self.name = name.replace('/', '|')
         """str: Node's name."""
-        self.prev = weakref.proxy(prev) if prev is not None else None
-        """
-        :obj:`weakref.ProxyType` to prev Node, or None. Similar to a double\
-        linked list, the pointer needs to be updated when the node is moved
-        """
-        self.parent = weakref.proxy(parent) if parent is not None else None
-        """:obj:`weakref.ProxyType` to parent Node, or None for root node."""
         self.x = x if x is not None else np.random.uniform(low=-200, high=200)
         """float in (-100, 100). x coordinate when drawn in 2D by Ogma.js"""
         self.y = y if y is not None else np.random.uniform(low=-200, high=200)
