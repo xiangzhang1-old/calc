@@ -12,6 +12,14 @@ calc.node module
     :undoc-members:
     :show-inheritance:
 
+calc.shelf module
+-----------------
+
+.. automodule:: calc.shelf
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 calc.util module
 ----------------
 

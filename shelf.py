@@ -3,8 +3,12 @@ from collections import OrderedDict
 
 shelf = OrderedDict()
 """
-Persistent variables are "collected" in a dict, similar to :class:`shelve.shelf`.
+Persistent variables are "collected" in a :class:`collections.OrderedDict`,
+similar to :class:`shelve.Shelf`.
 
-Considering Tensorflow-like objects, which requires custom saving / loading,
-each object either implements its own save()/load(), or utilizes :module:`dill`.
+Considering :mod:`tensorflow`-like objects, which requires custom save/load(),
+each object either
+* implements its own save/load()
+* doesn't implement save/load(), in which case :mod:`dill` is used.
+
 """

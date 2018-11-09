@@ -43,11 +43,11 @@ class Node:
         """str: Node's name."""
         self.prev = weakref.proxy(prev) if prev is not None else None
         """
-        :py:class:`weakref.ProxyType` to prev Node, or None. Similar to a double\
+        :obj:`weakref.ProxyType` to prev Node, or None. Similar to a double\
         linked list, the pointer needs to be updated when the node is moved
         """
         self.parent = weakref.proxy(parent) if parent is not None else None
-        """:class:`weakref.ProxyType` to parent Node, or None for root node."""
+        """:obj:`weakref.ProxyType` to parent Node, or None for root node."""
         self.x = x if x is not None else np.random.uniform(low=-200, high=200)
         """float in (-100, 100). x coordinate when drawn in 2D by Ogma.js"""
         self.y = y if y is not None else np.random.uniform(low=-200, high=200)
