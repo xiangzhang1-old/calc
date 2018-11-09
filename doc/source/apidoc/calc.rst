@@ -1,13 +1,18 @@
 calc package
 ============
 
+.. automodule:: calc
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Submodules
 ----------
 
-calc.node module
-----------------
+calc.graph module
+-----------------
 
-.. automodule:: calc.node
+.. automodule:: calc.graph
     :members:
     :undoc-members:
     :show-inheritance:
@@ -29,10 +34,3 @@ calc.util module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: calc
-    :members:
-    :undoc-members:
-    :show-inheritance:

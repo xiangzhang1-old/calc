@@ -7,10 +7,10 @@ Welcome to calc's documentation!
 ================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :caption: Contents:
 
-   apidoc/modules.rst
+   apidoc/calc
 
 ``calc`` implements and automates quantum-chemical calculations. It is primarily defined :download:`here <cgz1.procreate>`.
 

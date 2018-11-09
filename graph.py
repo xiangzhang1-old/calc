@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
-import numpy as np
+import numpy as np, pandas as pd
 import uuid, weakref
+import collections
 
 
 class Node:
@@ -27,11 +28,60 @@ class Node:
         """str. UUID"""
 
 
-class Graph(dict, Node):
+class Graph(collections.OrderedDict, Node):
 
     def __init__(self, *args, **kwargs):
         """
-        Implements a nested directed graph.
+        Implements a nested directed graph. See :meth:`Node.__init__` for syntax.
+
+        It is-a :class:`Node`. It __init__'s in the same way as, and has the
+        API of, :class:`Node`.
+
+        It also implements a graph as-a :class:`dict`::
+
+            {
+                src:    [dst0, dst1, dst2, ...]
+            }
+
         """
         dict.__init__(self)
         Node.__init__(self, *args, **kwargs)
+
+    def add_node(self, n):
+        """
+        Trivially implements adding a node.
+
+        :param Node n: Node to be added. Checks duplication
+        """
+        assert n not in self
+        self[n] = []
+
+    def add_edge(self, src, dst):
+        """
+        Trivially implements adding an edge.
+
+        :param Node src: Source node
+        :param Node dst: Destination node. Checks duplication
+        """
+        assert dst not in self[src]
+        self[src].append(dst)
+
+    def del_edge(self, src, dst):
+        """
+        Trivially implements deleting an edge.
+
+        :param Node src: Source node
+        :param Node dst: Destination node
+        """
+        self[src].remove(dst)
+
+    def del_node(self, n):
+        """
+        Trivially implements deleting a node.
+
+        :param Node n: Node to be deleted
+        """
+        del self[n]
+        for src in self:
+            if n in self[src]:
+                self.del_edge(src, n)
