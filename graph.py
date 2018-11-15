@@ -2,7 +2,7 @@
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
 import numpy as np, pandas as pd
-import uuid, weakref
+import weakref
 import collections
 
 
@@ -35,7 +35,7 @@ class Graph(collections.OrderedDict, Node):
         It is-a :class:`Node`. It __init__'s in the same way as, and has the
         API of, :class:`Node`.
 
-        In addition, a graph is implemented as adjacency list, as :class:`dict`: `self[src]=[dst, dst2, ...]`.
+        In addition, a graph is implemented as adjacency list, as :class:`dict`: ``self[src]=[dst, dst2, ...]``.
 
         """
         dict.__init__(self)
