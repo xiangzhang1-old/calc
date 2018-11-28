@@ -6,8 +6,23 @@ calc package
     :undoc-members:
     :show-inheritance:
 
+Subpackages
+-----------
+
+.. toctree::
+
+    calc.engine
+
 Submodules
 ----------
+
+calc.computation module
+-----------------------
+
+.. automodule:: calc.computation
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 calc.graph module
 -----------------

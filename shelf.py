@@ -2,13 +2,10 @@
 from collections import OrderedDict
 
 shelf = OrderedDict(
-    root = None,
-    clipboard = None,
-    lookup_table = None
+    root = None
 )
 """
-Persistent variables are "collected" in a :class:`collections.OrderedDict`,
-similar to :class:`shelve.Shelf`.
+Persistent variables are "collected" in a :class:`collections.OrderedDict`.
 
 Considering :mod:`tensorflow`-like objects, which requires custom persistence,
 each object either
