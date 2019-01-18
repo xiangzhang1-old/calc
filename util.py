@@ -5,7 +5,7 @@ import unicodedata
 
 
 def slugify(value):
-    """
+    r"""
     Make a string URL- and filename-friendly.
 
     Normalizes string into unicode, converts to lowercase, removes non-alpha-nu-
@@ -27,7 +27,7 @@ def slugify(value):
 
 
 class Graph(collections.OrderedDict):
-    """
+    r"""
     Implements a graph as an adjacency list.
 
     :class:`collections.OrderedDict`: ``self[src]=[dst, dst2, ...]``
