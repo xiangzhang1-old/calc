@@ -176,7 +176,7 @@ epub_title = project
 epub_exclude_files = ['search.html']
 
 
-# -- Hi. User-added content here : ) -----------------------------------------
+# -- Hi. User-added udf content here : ) -----------------------------------------
 autoclass_content = 'both'
 intersphinx_mapping = {'python': ('https://docs.python.org/2.7', None)}
 # -- Extension configuration -------------------------------------------------
