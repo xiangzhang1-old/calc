@@ -179,4 +179,5 @@ epub_exclude_files = ['search.html']
 # -- Hi. User-added udf content here : ) -----------------------------------------
 autoclass_content = 'both'
 intersphinx_mapping = {'python': ('https://docs.python.org/2.7', None)}
+autodoc_member_order = 'bysource'
 # -- Extension configuration -------------------------------------------------
