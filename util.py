@@ -1,7 +1,6 @@
 """Implements constants and utility functions/classes."""
 from __future__ import print_function, division, unicode_literals
-import re
-import unicodedata
+import re, unicodedata, collections
 
 
 def slugify(value):
