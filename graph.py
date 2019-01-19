@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
-import numpy as np, pandas as pd, weakref, collections
-import utils
+import numpy as np, collections
+import util
 
 
 class Node:
@@ -34,5 +34,5 @@ class Graph(collections.OrderedDict, util.Graph):
         It is-a :class:`Node`, and is-a :class:`util.Graph`.
 
         """
-        util.Graph.__init__(self)
+        util.graph.Graph.__init__(self)
         Node.__init__(self, *args, **kwargs)
