@@ -4,5 +4,5 @@ pull:
 	git pull
 html:
 	cd doc ; make html
-openhtml:
+open:
 	open doc/build/html/index.html
