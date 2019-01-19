@@ -1,5 +1,5 @@
 import time, dill, os
-import state
+from . import state
 
 
 script_dir = os.path.dirname(os.path.realpath(__file__))

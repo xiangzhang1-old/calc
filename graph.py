@@ -2,7 +2,7 @@
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
 import numpy as np, collections
-import util
+from . import util, state
 
 
 class Node:
@@ -25,14 +25,52 @@ class Node:
         """float in (-100, 100). y coordinate"""
 
 
-class Graph(collections.OrderedDict, util.Graph):
+class Graph(Node, util.Graph):
 
     def __init__(self, *args, **kwargs):
-        """
-        Implements a directed graph.
+        r"""
+        Implements a nested directed graph :math:`\subset` state.root.
 
-        It is-a :class:`Node`, and is-a :class:`util.Graph`.
+        Is-a :class:`Node`.
+        Is-a :class:`util.Graph`
+        Has-a few more tricks up its sleeve.
 
         """
-        util.graph.Graph.__init__(self)
+        util.Graph.__init__(self)
         Node.__init__(self, *args, **kwargs)
+
+    def iter(self):
+        r"""
+        :return: generator that recursively iterates through `self`
+
+        """
+        yield self
+        for _ in self:
+            if isinstance(_, Graph):
+                for __ in iter(_):
+                    yield __
+
+    @property
+    def parent(self):
+        r"""
+        :return: first parent :class:`Node` or `None` if nonexistent
+
+        """
+        for _ in iter(state.root):
+            if self in _:
+                return _
+        return None
+
+    @property
+    def prev(self):
+        r"""
+        :return: first prev :class:`Node` or `None` if nonexistent
+
+        """
+        parent = self.parent
+        if parent is None:
+            return None
+        for _ in parent:
+            if self in parent[_]:
+                return _
+        return None
