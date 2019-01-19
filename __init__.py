@@ -3,4 +3,4 @@
 Implements and automates quantum-chemical calculations.
 """
 
-from . import util, graph
+from . import util, graph, shelf
