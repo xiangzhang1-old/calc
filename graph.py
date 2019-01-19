@@ -2,7 +2,7 @@
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
 import numpy as np, collections
-from . import util, state
+from . import lib, state
 
 
 class Node:
@@ -25,18 +25,18 @@ class Node:
         """float in (-100, 100). y coordinate"""
 
 
-class Graph(Node, util.Graph):
+class Graph(Node, lib.Graph):
 
     def __init__(self, *args, **kwargs):
         r"""
         Implements a nested directed graph :math:`\subset` state.root.
 
         Is-a :class:`Node`.
-        Is-a :class:`util.Graph`
+        Is-a :class:`lib.Graph`
         Has-a few more tricks up its sleeve.
 
         """
-        util.Graph.__init__(self)
+        lib.Graph.__init__(self)
         Node.__init__(self, *args, **kwargs)
 
     def iter(self):
