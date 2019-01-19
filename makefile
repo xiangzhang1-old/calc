@@ -2,7 +2,7 @@ push:
 	git add -A ; git commit -am. ; git push
 pull:
 	git pull
-doc:
+html:
 	cd doc ; make html
-opendoc:
+openhtml:
 	open doc/build/html/index.html
