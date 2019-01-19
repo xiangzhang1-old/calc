@@ -39,6 +39,9 @@ class Graph(collections.OrderedDict):
     Adjacency list.
     """
 
+    def __init__(self):
+        collections.OrderedDict.__init__(self)
+
     def add_node(self, n):
         r"""
         Given :math:`n\notin G`, consider :math:`G\cup\{n\}`.
