@@ -7,7 +7,7 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 
 def dump(obj, file):
     r"""
-    :method:`dill.dump` `obj` to `file.dill.YYYYMMDDHHMMSS`
+    :meth:`dill.dump` `obj` to `file.dill.YYYYMMDDHHMMSS`
 
     :param str file:
     :param object obj: object to save
@@ -27,7 +27,7 @@ def dump_state():
     r"""
     For each componenet of `shelf`, either
     * call custom-built `dump` (eg. :mod:`tensorflow`-based objects)
-    * :method:`dump`
+    * :meth:`dump`
 
     """
     dump(state.root, 'root')
