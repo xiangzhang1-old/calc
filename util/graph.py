@@ -1,3 +1,6 @@
+import collections
+
+
 class Graph(collections.OrderedDict):
     r"""
     Implements a graph as an adjacency list.

@@ -1,7 +1,6 @@
 """Implements constants and utility functions/classes."""
 from __future__ import print_function, division, unicode_literals
-import re, unicodedata, collections, pandas as pd, os
-import graph
+import re, unicodedata, pandas as pd, os
 
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
