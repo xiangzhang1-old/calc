@@ -34,8 +34,44 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="calc-saver-package">
-<h1>calc.saver package<a class="headerlink" href="#calc-saver-package" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-calc.saver">
+<span id="calc-saver-package"></span><h1>calc.saver package<a class="headerlink" href="#module-calc.saver" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="calc.saver.dump">
+<code class="descclassname">calc.saver.</code><code class="descname">dump</code><span class="sig-paren">(</span><em>obj</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">dill.dump()</span></code> <cite>obj</cite> to <cite>file.dill.YYYYMMDDHHMMSS</cite></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – </li>
+<li><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – object to save</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="calc.saver.dump_state">
+<code class="descclassname">calc.saver.</code><code class="descname">dump_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.dump_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each componenet of <cite>shelf</cite>, either
+* call custom-built <cite>dump</cite> (eg. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tensorflow</span></code>-based objects)
+* <a class="reference internal" href="#calc.saver.dump" title="calc.saver.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="calc.saver.load">
+<code class="descclassname">calc.saver.</code><code class="descname">load</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="calc.saver.load_state">
+<code class="descclassname">calc.saver.</code><code class="descname">load_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.load_state" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </div>
 
 
