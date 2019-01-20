@@ -2,7 +2,7 @@
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
 import numpy as np, collections
-from . import lib, state
+from . import lib, state, plugin
 
 
 class Node:
@@ -25,7 +25,7 @@ class Node:
         """float in (-100, 100). y coordinate"""
 
 
-class Graph(Node, lib.Graph):
+class Graph(Node, lib.Graph, plugin.graph.GraphMixin):
 
     def __init__(self, *args, **kwargs):
         r"""
@@ -33,44 +33,8 @@ class Graph(Node, lib.Graph):
 
         Is-a :class:`Node`.
         Is-a :class:`lib.Graph`
-        Has-a few more tricks up its sleeve.
+        Extended by :class:`plugin.graph.GraphMixin`
 
         """
         lib.Graph.__init__(self)
         Node.__init__(self, *args, **kwargs)
-
-    def iter(self):
-        r"""
-        :return: generator that recursively iterates through `self`
-
-        """
-        yield self
-        for _ in self:
-            if isinstance(_, Graph):
-                for __ in iter(_):
-                    yield __
-
-    @property
-    def parent(self):
-        r"""
-        :return: first parent :class:`Node` or `None` if nonexistent
-
-        """
-        for _ in iter(state.root):
-            if self in _:
-                return _
-        return None
-
-    @property
-    def prev(self):
-        r"""
-        :return: first prev :class:`Node` or `None` if nonexistent
-
-        """
-        parent = self.parent
-        if parent is None:
-            return None
-        for _ in parent:
-            if self in parent[_]:
-                return _
-        return None
