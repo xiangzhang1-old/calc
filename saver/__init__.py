@@ -25,7 +25,7 @@ def load(file):
 
 def dump_state():
     r"""
-    For each componenet of `shelf`:
+    For each componenet of :mod:`state`, either
 
     * call custom-built `dump` (eg. :mod:`tensorflow`-based objects)
     * :meth:`dump`
