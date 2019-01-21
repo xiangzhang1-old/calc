@@ -183,7 +183,7 @@ autodoc_member_order = 'bysource'
 
 ## Monkey patch: long __repr__ gets truncated
 from sphinx.ext.autodoc import DataDocumenter, ModuleLevelDocumenter, SUPPRESS
-from sphinx.util.inspect import safe_repr
+from sphinx.util.inspect import object_description
 
 def add_directive_header(self, sig):
     ModuleLevelDocumenter.add_directive_header(self, sig)
