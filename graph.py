@@ -33,8 +33,8 @@ class Graph(Node, lib.Graph, plugin.graph.GraphMixin):
         Borrows from the Linux Filesystem paradigm.
 
         Is-a :class:`Node`.
-        Is-a :class:`lib.Graph`
-        Extended by :class:`plugin.graph.GraphMixin`
+        Is-a :class:`lib.Graph`.
+        Extended by :class:`plugin.graph.GraphMixin`.
 
         """
         lib.Graph.__init__(self)
