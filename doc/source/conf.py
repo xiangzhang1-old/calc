@@ -77,7 +77,7 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -181,7 +181,8 @@ autoclass_content = 'both'
 intersphinx_mapping = {'python': ('https://docs.python.org/2.7', None)}
 autodoc_member_order = 'bysource'
 
-## Monkey patch: long __repr__ gets truncated
+## Monkey patch: long __repr__ gets truncated. Possibly version-sensitive
+## https://stackoverflow.com/questions/26026819/how-do-i-omit-the-values-of-variables-on-sphinx
 from sphinx.ext.autodoc import DataDocumenter, ModuleLevelDocumenter, SUPPRESS
 from sphinx.util.inspect import object_description
 
