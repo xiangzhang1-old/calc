@@ -189,7 +189,7 @@ def add_directive_header(self, sig):
     ModuleLevelDocumenter.add_directive_header(self, sig)
     if not self.options.annotation:
         try:
-            objrepr = safe_repr(self.object)
+            objrepr = object_description(self.object)
 
             # PATCH: truncate the value if longer than 50 characters
             if len(objrepr) > 50:
