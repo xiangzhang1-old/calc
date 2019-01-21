@@ -30,6 +30,7 @@ class Graph(Node, lib.Graph, plugin.graph.GraphMixin):
     def __init__(self, *args, **kwargs):
         r"""
         Implements a nested directed graph :math:`\subset` state.root.
+        Borrows from the Linux Filesystem paradigm.
 
         Is-a :class:`Node`.
         Is-a :class:`lib.Graph`
