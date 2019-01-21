@@ -180,4 +180,30 @@ epub_exclude_files = ['search.html']
 autoclass_content = 'both'
 intersphinx_mapping = {'python': ('https://docs.python.org/2.7', None)}
 autodoc_member_order = 'bysource'
-# -- Extension configuration -------------------------------------------------
+
+## Monkey patch: long __repr__ gets truncated
+from sphinx.ext.autodoc import DataDocumenter, ModuleLevelDocumenter, SUPPRESS
+from sphinx.util.inspect import safe_repr
+
+def add_directive_header(self, sig):
+    ModuleLevelDocumenter.add_directive_header(self, sig)
+    if not self.options.annotation:
+        try:
+            objrepr = safe_repr(self.object)
+
+            # PATCH: truncate the value if longer than 50 characters
+            if len(objrepr) > 50:
+                objrepr = objrepr[:50] + "..."
+
+        except ValueError:
+            pass
+        else:
+            self.add_line(u'   :annotation: = ' + objrepr, '<autodoc>')
+    elif self.options.annotation is SUPPRESS:
+        pass
+    else:
+        self.add_line(u'   :annotation: %s' % self.options.annotation,
+                      '<autodoc>')
+
+DataDocumenter.add_directive_header = add_directive_header
+# -- End udf content -------------------------------------------------
