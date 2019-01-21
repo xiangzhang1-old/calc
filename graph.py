@@ -25,7 +25,7 @@ class Node:
         """float in (-100, 100). y coordinate"""
 
 
-class Graph(Node, lib.Graph, plugin.graph.GraphMixin):
+class Graph(lib.Graph, Node):
 
     def __init__(self, *args, **kwargs):
         r"""
@@ -34,11 +34,13 @@ class Graph(Node, lib.Graph, plugin.graph.GraphMixin):
 
         Is-a :class:`Node`.
         Is-a :class:`lib.Graph`.
-        Has-a few more tricks based on the Linux FileSystem metaphor.
+        Has-a few more tricks borrowed from the Linux FileSystem metaphor.
 
         """
         lib.Graph.__init__(self)
         Node.__init__(self, *args, **kwargs)
+
+    # other
 
     def ls(self):
         r"""
@@ -47,7 +49,7 @@ class Graph(Node, lib.Graph, plugin.graph.GraphMixin):
         """
         yield self
         for _ in self:
-            if isinstance(_, GraphMixin):   # hack. should be Graph. https://stackoverflow.com/a/2462040/6417519
+            if isinstance(_, Graph):
                 for __ in iter(_):
                     yield __
 
