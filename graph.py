@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
-import numpy as np, collections
-from . import lib, state, plugin
+import numpy as np
+from . import lib, state
 
 
 class Node:
@@ -82,7 +82,7 @@ class Graph(lib.Graph, Node):
 
     def cd(self, path):
         r"""
-        :param str path: one of
+        :param unicode path: one of
 
         * relative path. parent `..`, previous `-`, root '/' supported
         * absolute path, e.g. `/QD/15A vacuum`
