@@ -1,4 +1,4 @@
-import state
+from .. import state
 
 
 class GraphMixin:
