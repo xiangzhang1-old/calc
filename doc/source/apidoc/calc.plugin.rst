@@ -9,12 +9,7 @@ calc.plugin package
 Submodules
 ----------
 
-calc.plugin.graph module
-------------------------
+.. toctree::
 
-.. automodule:: calc.plugin.graph
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
+   calc.plugin.graph
 

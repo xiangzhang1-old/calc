@@ -18,20 +18,8 @@ Subpackages
 Submodules
 ----------
 
-calc.graph module
------------------
+.. toctree::
 
-.. automodule:: calc.graph
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-calc.state module
------------------
-
-.. automodule:: calc.state
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
+   calc.graph
+   calc.state
 
