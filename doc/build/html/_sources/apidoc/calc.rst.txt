@@ -1,11 +1,6 @@
 calc package
 ============
 
-.. automodule:: calc
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 Subpackages
 -----------
 
@@ -18,8 +13,27 @@ Subpackages
 Submodules
 ----------
 
-.. toctree::
+calc.graph module
+-----------------
 
-   calc.graph
-   calc.state
+.. automodule:: calc.graph
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
+calc.state module
+-----------------
+
+.. automodule:: calc.state
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: calc
+    :members:
+    :undoc-members:
+    :show-inheritance:

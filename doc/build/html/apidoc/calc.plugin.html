@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="calc.plugin.graph.html" />
+    <link rel="next" title="calc.saver package" href="calc.saver.html" />
     <link rel="prev" title="calc.lib package" href="calc.lib.html" /> 
 
   
@@ -85,12 +85,17 @@
 <li class="toctree-l3"><a class="reference internal" href="calc.lib.html">calc.lib package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">calc.plugin package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-calc.plugin.graph">calc.plugin.graph module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-calc.plugin">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="calc.saver.html">calc.saver package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="calc.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc.graph">calc.graph module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc.state">calc.state module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -159,12 +164,80 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-calc.plugin">
-<span id="calc-plugin-package"></span><h1>calc.plugin package<a class="headerlink" href="#module-calc.plugin" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="calc-plugin-package">
+<h1>calc.plugin package<a class="headerlink" href="#calc-plugin-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
 </div>
+<div class="section" id="module-calc.plugin.graph">
+<span id="calc-plugin-graph-module"></span><h2>calc.plugin.graph module<a class="headerlink" href="#module-calc.plugin.graph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="calc.plugin.graph.GraphMixin">
+<em class="property">class </em><code class="descclassname">calc.plugin.graph.</code><code class="descname">GraphMixin</code><a class="headerlink" href="#calc.plugin.graph.GraphMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Based on the Linux FS paradigm, a few more tricks for <code class="xref py py-class docutils literal notranslate"><span class="pre">graph.Graph</span></code>.</p>
+<dl class="method">
+<dt id="calc.plugin.graph.GraphMixin.ls">
+<code class="descname">ls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calc.plugin.graph.GraphMixin.ls" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">generator that recursively iterates through <cite>self</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="calc.plugin.graph.GraphMixin.cd">
+<code class="descname">cd</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.plugin.graph.GraphMixin.cd" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – one of</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>relative path. parent <cite>..</cite> and previous <cite>-</cite> supported</li>
+<li>absolute path, e.g. <cite>/QD/15A vacuum</cite></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="calc.html#calc.graph.Node" title="calc.graph.Node">graph.Node</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><strong>LookupError</strong> – if non-existent</li>
+<li><strong>ValueError</strong> – if path is illegal</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="calc.plugin.graph.GraphMixin.pwd">
+<code class="descname">pwd</code><a class="headerlink" href="#calc.plugin.graph.GraphMixin.pwd" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">absolute path</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-calc.plugin">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-calc.plugin" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -176,7 +249,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="calc.plugin.graph.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="calc.saver.html" class="btn btn-neutral float-right" title="calc.saver package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="calc.lib.html" class="btn btn-neutral" title="calc.lib package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
