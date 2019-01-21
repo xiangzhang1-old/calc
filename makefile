@@ -3,6 +3,6 @@ push:
 pull:
 	git pull
 html:
-	cd doc ; make html
+	cd doc/source/apidoc ; make apidoc ; cd ../.. ; make html
 open:
 	open doc/build/html/index.html

@@ -11,8 +11,9 @@ Subpackages
 
 .. toctree::
 
+    calc.lib
+    calc.plugin
     calc.saver
-    calc.util
 
 Submodules
 ----------

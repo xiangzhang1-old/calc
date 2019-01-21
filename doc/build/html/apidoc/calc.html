@@ -16,7 +16,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="calc.saver package" href="calc.saver.html" />
+    <link rel="next" title="calc.lib package" href="calc.lib.html" />
     <link rel="prev" title="Welcome to calc’s documentation!" href="../index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -41,8 +41,13 @@
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="calc.lib.html">calc.lib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calc.plugin.html">calc.plugin package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calc.plugin.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.plugin.html#module-calc.plugin.graph">calc.plugin.graph module</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="calc.saver.html">calc.saver package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calc.util.html">calc.util package</a></li>
 </ul>
 </div>
 </div>
@@ -92,50 +97,12 @@
 <dl class="class">
 <dt id="calc.graph.Graph">
 <em class="property">class </em><code class="descclassname">calc.graph.</code><code class="descname">Graph</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.graph.Graph" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#calc.graph.Node" title="calc.graph.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">calc.graph.Node</span></code></a>, <a class="reference internal" href="calc.util.html#calc.util.Graph" title="calc.util.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">calc.util.Graph</span></code></a></p>
-<p>Implements a nested directed graph <span class="math notranslate nohighlight">\(\subset\)</span> state.root.</p>
+<dd><p>Bases: <a class="reference internal" href="#calc.graph.Node" title="calc.graph.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">calc.graph.Node</span></code></a>, <a class="reference internal" href="calc.lib.html#calc.lib.Graph" title="calc.lib.Graph"><code class="xref py py-class docutils literal notranslate"><span class="pre">calc.lib.Graph</span></code></a>, <a class="reference internal" href="calc.plugin.html#calc.plugin.graph.GraphMixin" title="calc.plugin.graph.GraphMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">calc.plugin.graph.GraphMixin</span></code></a></p>
+<p>Implements a nested directed graph <span class="math notranslate nohighlight">\(\subset\)</span> state.root.
+Borrows from the Linux Filesystem paradigm.</p>
 <p>Is-a <a class="reference internal" href="#calc.graph.Node" title="calc.graph.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a>.
-Is-a <code class="xref py py-class docutils literal notranslate"><span class="pre">util.Graph</span></code>
-Has-a few more tricks up its sleeve.</p>
-<dl class="method">
-<dt id="calc.graph.Graph.iter">
-<code class="descname">iter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calc.graph.Graph.iter" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">generator that recursively iterates through <cite>self</cite></td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="calc.graph.Graph.parent">
-<code class="descname">parent</code><a class="headerlink" href="#calc.graph.Graph.parent" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">first parent <a class="reference internal" href="#calc.graph.Node" title="calc.graph.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> or <cite>None</cite> if nonexistent</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="calc.graph.Graph.prev">
-<code class="descname">prev</code><a class="headerlink" href="#calc.graph.Graph.prev" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">first prev <a class="reference internal" href="#calc.graph.Node" title="calc.graph.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> or <cite>None</cite> if nonexistent</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
+Is-a <code class="xref py py-class docutils literal notranslate"><span class="pre">lib.Graph</span></code>
+Extended by <code class="xref py py-class docutils literal notranslate"><span class="pre">plugin.graph.GraphMixin</span></code></p>
 </dd></dl>
 
 </div>
@@ -165,8 +132,9 @@ Has-a few more tricks up its sleeve.</p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">calc package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calc.lib.html">calc.lib package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calc.plugin.html">calc.plugin package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="calc.saver.html">calc.saver package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calc.util.html">calc.util package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
@@ -181,7 +149,7 @@ Has-a few more tricks up its sleeve.</p>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="../index.html" title="previous chapter">Welcome to calc’s documentation!</a></li>
-      <li>Next: <a href="calc.saver.html" title="next chapter">calc.saver package</a></li>
+      <li>Next: <a href="calc.lib.html" title="next chapter">calc.lib package</a></li>
   </ul></li>
 </ul>
 </div>

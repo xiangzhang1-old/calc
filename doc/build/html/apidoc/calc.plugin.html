@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>calc.plugin package &#8212; calc  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="calc.saver package" href="calc.saver.html" />
+    <link rel="prev" title="calc.lib package" href="calc.lib.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-calc.plugin">
+<span id="calc-plugin-package"></span><h1>calc.plugin package<a class="headerlink" href="#module-calc.plugin" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-calc.plugin.graph">
+<span id="calc-plugin-graph-module"></span><h2>calc.plugin.graph module<a class="headerlink" href="#module-calc.plugin.graph" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="calc.plugin.graph.GraphMixin">
+<em class="property">class </em><code class="descclassname">calc.plugin.graph.</code><code class="descname">GraphMixin</code><a class="headerlink" href="#calc.plugin.graph.GraphMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Based on the Linux FS paradigm, a few more tricks for <code class="xref py py-class docutils literal notranslate"><span class="pre">graph.Graph</span></code>.</p>
+<dl class="method">
+<dt id="calc.plugin.graph.GraphMixin.ls">
+<code class="descname">ls</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calc.plugin.graph.GraphMixin.ls" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">generator that recursively iterates through <cite>self</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="calc.plugin.graph.GraphMixin.cd">
+<code class="descname">cd</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.plugin.graph.GraphMixin.cd" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – one of</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>relative path. parent <cite>..</cite> and previous <cite>-</cite> supported</li>
+<li>absolute path, e.g. <cite>/QD/15A vacuum</cite></li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="calc.html#calc.graph.Node" title="calc.graph.Node">graph.Node</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><strong>LookupError</strong> – if non-existent</li>
+<li><strong>ValueError</strong> – if path is illegal</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="calc.plugin.graph.GraphMixin.pwd">
+<code class="descname">pwd</code><a class="headerlink" href="#calc.plugin.graph.GraphMixin.pwd" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">absolute path</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">calc</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="calc.html">calc package</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="calc.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="calc.lib.html">calc.lib package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">calc.plugin package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-calc.plugin.graph">calc.plugin.graph module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="calc.saver.html">calc.saver package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc.graph">calc.graph module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc.state">calc.state module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="calc.html">calc package</a><ul>
+      <li>Previous: <a href="calc.lib.html" title="previous chapter">calc.lib package</a></li>
+      <li>Next: <a href="calc.saver.html" title="next chapter">calc.saver package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Xiang Zhang.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/apidoc/calc.plugin.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
