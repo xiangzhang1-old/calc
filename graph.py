@@ -8,7 +8,7 @@ from . import lib, state
 class Node:
 
     def __init__(self, name, x=None, y=None):
-        """
+        r"""
         A generic node in a nested directed graph.
 
         :param str name: Node's name. '/' will be silently replaced with '|', to facilitate id.
