@@ -9,10 +9,9 @@ class Node:
 
     def __init__(self, name, x=None, y=None):
         """
-        Implements a generic node in a nested directed graph.
+        A generic node in a nested directed graph.
 
-        :param str name: Node's name. '/' will be silently replaced with '|', \
-        to facilitate id.
+        :param str name: Node's name. '/' will be silently replaced with '|', to facilitate id.
         :param float x: x coordinate. None to use random number
         :param float y: y coordinate
 
@@ -40,8 +39,7 @@ class Graph(lib.Graph, Node):
         lib.Graph.__init__(self)
         Node.__init__(self, *args, **kwargs)
 
-    # other
-
+    #lfs
     def ls(self):
         r"""
         :return: generator that recursively iterates through `self`
@@ -74,7 +72,7 @@ class Graph(lib.Graph, Node):
         :raises LookupError: if non-existent
 
         """
-        parent = self.parent
+        parent = self._parent
         for _ in parent:
             if self in parent[_]:
                 return _

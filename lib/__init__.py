@@ -1,4 +1,4 @@
-"""Reusable code: constants, functions, classes."""
+"""Textbook: constants, functions, classes."""
 from __future__ import print_function, division, unicode_literals
 import re, unicodedata, pandas as pd, os, collections
 
@@ -38,7 +38,7 @@ periodic_table = pd.read_excel(script_dir + '/periodic_table.xlsx')
 class Graph(collections.OrderedDict):
 
     def __init__(self):
-        r"""
+        """
         adjacency list.
 
         """
