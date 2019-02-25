@@ -42,7 +42,7 @@ class Graph(collections.OrderedDict):
         adjacency list.
 
         """
-        collections.OrderedDict.__init__(self)
+        super().__init__()
 
     def add_node(self, n):
         r"""

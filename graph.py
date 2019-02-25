@@ -5,28 +5,26 @@ import numpy as np
 from . import lib, state
 
 
-class Node:
+class Node(object):
 
-    def __init__(self, name, x=None, y=None):
+    def __init__(self):
         r"""
         A generic node in a nested directed graph.
 
-        :param str name: Node's name. '/' will be silently replaced with '|', to facilitate id.
-        :param float x: x coordinate. None to use random number
-        :param float y: y coordinate
+        :ivar str name: Node's name. Hint: don't insert /.
+        :ivar float x: x coordinate for Ogma.js. float in (-200, 200).
+        :ivar float y: y coordinate
 
         """
-        self.name = name.replace('/', '|')
-        """str: Node's name."""
-        self.x = x if x is not None else np.random.uniform(low=-200, high=200)
-        """float in (-100, 100). x coordinate when drawn in 2D by Ogma.js"""
-        self.y = y if y is not None else np.random.uniform(low=-200, high=200)
-        """float in (-100, 100). y coordinate"""
+        super().__init__()
+        self.name = None
+        self.x = np.random.uniform(low=-200, high=200)
+        self.y = np.random.uniform(low=-200, high=200)
 
 
 class Graph(lib.Graph, Node):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         r"""
         Implements a nested directed graph :math:`\subset` state.root.
         Borrows from the Linux Filesystem paradigm.
@@ -36,8 +34,7 @@ class Graph(lib.Graph, Node):
         Has-a few more tricks borrowed from the Linux FileSystem metaphor.
 
         """
-        lib.Graph.__init__(self)
-        Node.__init__(self, *args, **kwargs)
+        super().__init__()
 
     #lfs
     def ls(self):
