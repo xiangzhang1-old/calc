@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="calc.plugin package" href="calc.plugin.html" /> 
+    <link rel="prev" title="calc.lib package" href="calc.lib.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,17 +82,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="calc.html">calc package</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="calc.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="calc.lib.html">calc.lib package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="calc.plugin.html">calc.plugin package</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">calc.saver package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-calc.saver">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">calc.saver package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="calc.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc.graph">calc.graph module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc.state">calc.state module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calc.html#module-calc">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -161,20 +156,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="calc-saver-package">
-<h1>calc.saver package<a class="headerlink" href="#calc-saver-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-calc.saver">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-calc.saver" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="module-calc.saver">
+<span id="calc-saver-package"></span><h1>calc.saver package<a class="headerlink" href="#module-calc.saver" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="calc.saver.dump">
-<code class="descclassname">calc.saver.</code><code class="descname">dump</code><span class="sig-paren">(</span><em>obj</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.dump" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">calc.saver.</code><code class="descname">dump</code><span class="sig-paren">(</span><em>obj</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.dump" title="Permalink to this definition">¶</a></dt>
 <dd><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">dill.dump()</span></code> <cite>obj</cite> to <cite>file.dill.YYYYMMDDHHMMSS</cite></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>file</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) – </li>
+<li><strong>filename</strong> (<em>unicode</em>) – </li>
 <li><strong>obj</strong> (<a class="reference external" href="https://docs.python.org/2.7/library/functions.html#object" title="(in Python v2.7)"><em>object</em></a>) – object to save</li>
 </ul>
 </td>
@@ -185,13 +178,13 @@
 
 <dl class="function">
 <dt id="calc.saver.load">
-<code class="descclassname">calc.saver.</code><code class="descname">load</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.load" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">calc.saver.</code><code class="descname">load</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="calc.saver.dump_state">
 <code class="descclassname">calc.saver.</code><code class="descname">dump_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calc.saver.dump_state" title="Permalink to this definition">¶</a></dt>
-<dd><p>For each componenet of <cite>shelf</cite>:</p>
+<dd><p>For each componenet of <code class="xref py py-mod docutils literal notranslate"><span class="pre">state</span></code>, either</p>
 <ul class="simple">
 <li>call custom-built <cite>dump</cite> (eg. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tensorflow</span></code>-based objects)</li>
 <li><a class="reference internal" href="#calc.saver.dump" title="calc.saver.dump"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dump()</span></code></a></li>
@@ -204,7 +197,6 @@
 <dd></dd></dl>
 
 </div>
-</div>
 
 
            </div>
@@ -215,7 +207,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="calc.plugin.html" class="btn btn-neutral" title="calc.plugin package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="calc.lib.html" class="btn btn-neutral" title="calc.lib package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

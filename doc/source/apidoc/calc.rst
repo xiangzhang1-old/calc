@@ -1,13 +1,17 @@
 calc package
 ============
 
+.. automodule:: calc
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Subpackages
 -----------
 
 .. toctree::
 
     calc.lib
-    calc.plugin
     calc.saver
 
 Submodules
@@ -30,10 +34,3 @@ calc.state module
     :show-inheritance:
 
 
-Module contents
----------------
-
-.. automodule:: calc
-    :members:
-    :undoc-members:
-    :show-inheritance:
