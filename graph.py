@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Implements nested directed graphs. Like folders, they organize DFT computations."""
 from __future__ import print_function, division, unicode_literals
 import numpy as np
