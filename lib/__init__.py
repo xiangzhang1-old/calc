@@ -28,11 +28,10 @@ def slugify(value):
     return value
 
 
-periodic_table = pd.DataFrame()     # sphinx-doc hack
+periodic_table = pd.read_excel(script_dir + '/periodic_table.xlsx')
 r"""
 Periodic table. :class:`pandas.DataFrame` read from periodic_table.xlsx.
 """
-periodic_table = pd.read_excel(script_dir + '/periodic_table.xlsx')
 
 
 class Graph(collections.OrderedDict):
