@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 """Autodiscussions eg. INCAR."""
 import pandas as pd, numpy as np
+
 
 class Struct(object):
 
@@ -14,3 +16,6 @@ class Struct(object):
         super().__init__()
         self.A = None
         self.X = pd.DataFrame(columns=['x', 'y', 'z', 'symbol'])
+
+
+class
